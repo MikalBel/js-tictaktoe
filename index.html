@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic Tac Toe</title>
+    <style>
+        body{
+           background: yellow;
+        }
+        .head{
+            width:100%;
+            background:#4cf;
+            height:200px;
+        }
+        .first{
+            width:25%;
+            background: #000;
+            height:480px;
+            float:left;
+        }
+        .center{
+            background: aqua;
+            width:50%;
+            height:480px;
+            float:left;
+        }
+        .center table
+        {
+          margin:auto;
+          padding-top:20%;
+        }
+        .third{
+            float:left;
+            width:25%;
+            height:480px;
+            background: #000;
+        }
+    input[type='button']{
+        background:orange;
+        height:100px;
+        
+        font-size: 90px;
+        width:100px;
+
+    }
+    #p1{   
+        height: 30px;
+        width:200px;
+         border-radius:20px;
+         outline:0px;
+         border: 0px;
+         padding-left:3px;
+         padding-right:3px;
+         font-size:17px;
+         font-family:cursive;
+
+
+    }
+    #p2{   
+        height: 30px;
+        width:200px;
+         border-radius:20px;
+         outline:0px;
+         border: 0px;
+         padding-left:3px;
+         padding-right:3px;
+         font-size:17px;
+         font-family:cursive;
+
+
+    }
+    #b1{
+        width:100px;
+        height:40px;
+        font-size:20px;
+        color:white;
+        border: 0px;
+      outline:0px;
+
+    }
+    .heading{
+        color:indigo;
+        font-size:40px;
+        font-family:cursive;
+        position: absolute;
+        top:15px;
+        left:40%;
+       }
+    .player1{
+       padding-top:150px;
+    }
+    .player2{
+        float:right;
+        margin-top:-40px;
+        margin-right:20px;
+    }
+    *{
+        margin:0px;
+    }
+    #player1_name{
+        text-align:center;
+        font-size:30px;
+        margin-top:50px;
+    }
+    #player2_name{
+        margin-top:50px;
+        text-align:center;
+        font-size:30px;
+    }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div class='player1'>
+         <input type="text" placeholder="Player1" name="Player1" id="p1" class='box1' >
+        <input type="button" value="enter" id='b1' onclick="takeplayer1()">
+        </div>
+        <div class='player2'>
+        <h1 class='heading'>Tic Tac Toe</h1>
+        <input type="button"  value="enter" id='b1' onclick="takeplayer2()">
+        <input type=text placeholder="Player2" name="Player2" id="p2" class='box2' >
+        </div>
+    </div>
+    <div class="first">
+        <div class="name1" >
+            <p id='player1_name' style="color:white;"></p>
+        </div>
+    </div>
+    <div class="center">
+    <table>
+        <tr><td><input type="button" value="" id='button1'  class="buttons"  onclick="f1()" ></td><td><input type="button"  class="buttons" id='button2' onclick="f2()" value=""></td><td><input id='button3' class="buttons"  onclick="f3()" type="button" value=""></td></tr>
+        <tr><td><input type="button" id='button4'  class="buttons"  onclick="f4()" value=""></td><td><input type="button" class="buttons" id='button5' onclick="f5()" value=""></td><td><input id='button6'   onclick="f6()" class="buttons" type="button" value=""></td></tr>
+        <tr><td><input type="button" id='button7' class="buttons"  onclick="f7()" value=""></td><td><input id='button8' class="buttons"  onclick="f8()" type="button" value=""></td><td><input id='button9' class="buttons"  onclick="f9()" type="button" value=""></td></tr>
+    
+    </table>
+     </div>
+   <div class="third">
+       <div class="name2" style="color:white;">
+            <p id='player2_name'></p>
+       </div>
+   </div>
+
+   <script>
+   var counter=0;
+
+   var takeplayer1=function(){
+            var player1=document.querySelector('.box1').value;
+            document.getElementById('player1_name').innerHTML=` hey ${player1}`
+   }
+   var takeplayer2=function(){
+            var player2=document.querySelector('.box2').value;
+            document.getElementById('player2_name').innerHTML=` hey ${player2}`
+   }
+
+   var f1=function (){
+        p=document.getElementsByClassName('buttons')
+        if(counter==9)
+          {
+        for(var n=0;n<p.length;++n)
+         { p[n].value='';}
+         counter=0;}
+       if(document.getElementById('button1').value.length==0)
+       {if(counter%2==0){
+           
+       document.getElementById('button1').value='X'
+       
+       document.getElementById('button1').style.color='white';
+       if(document.getElementById('button2').value=='X' && document.getElementById('button3').value=='X' || document.getElementById('button4').value=='X' && document.getElementById('button7').value=='X' || document.getElementById('button5').value=='X' && document.getElementById('button9').value=='X')
+             {p1= document.getElementById('p1').value;
+             alert('Congratulations '+p1+'  you won the match')  
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}        }   }
+       else{
+        
+        document.getElementById('button1').value='O'
+        document.getElementById('button1').style.color='black';
+        if(document.getElementById('button2').value=='O' && document.getElementById('button3').value=='O' || document.getElementById('button4').value=='O' && document.getElementById('button7').value=='O' || document.getElementById('button5').value=='O' && document.getElementById('button9').value=='O')
+             {
+                p2= document.getElementById('p2').value;
+                alert('Congratulations '+p2+'  you won the match')  
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}          } 
+              }
+         counter=counter+1;}
+   }
+   var f2=function (){
+    p=document.getElementsByClassName('buttons')
+        if(counter==9)
+          {
+        for(var n=0;n<p.length;++n)
+         { p[n].value='';}
+         counter=0;}
+    if(document.getElementById('button2').value.length==0)
+       {
+       if(counter%2==0){
+           
+       document.getElementById('button2').value='X'
+       document.getElementById('button2').style.color='white';
+       if(document.getElementById('button1').value=='X' && document.getElementById('button3').value=='X'  || document.getElementById('button5').value=='X' && document.getElementById('button8').value=='X')
+             {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match')  
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}       
+                         }  }
+       
+       else{
+        
+        document.getElementById('button2').value='O'
+        document.getElementById('button2').style.color='black';
+        if(document.getElementById('button1').value=='O' && document.getElementById('button3').value=='O'  || document.getElementById('button5').value=='O' && document.getElementById('button8').value=='O')
+             {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')       
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='',counter=0}  
+                        }  }
+       counter=counter+1;}
+   }
+   
+   var f3=function (){
+    p=document.getElementsByClassName('buttons')
+        if(counter==9)
+          {
+        for(var n=0;n<p.length;++n)
+         { p[n].value='';}
+         counter=0;}
+    if(document.getElementById('button3').value.length==0)
+       {
+       if(counter%2==0){
+           
+       document.getElementById('button3').value='X'
+       document.getElementById('button3').style.color='white';
+       if(document.getElementById('button6').value=='X' && document.getElementById('button9').value=='X' || document.getElementById('button5').value=='X' && document.getElementById('button7').value=='X' || document.getElementById('button1').value=='X' && document.getElementById('button2').value=='X')
+             {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match') 
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0;}           } 
+       }
+       else{
+        
+        document.getElementById('button3').value='O'
+        document.getElementById('button3').style.color='black';
+        if(document.getElementById('button6').value=='O' && document.getElementById('button9').value=='X' || document.getElementById('button5').value=='O' && document.getElementById('button7').value=='O' || document.getElementById('button1').value=='O' && document.getElementById('button2').value=='O')
+             {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')  
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}           } 
+       }
+       
+       counter=counter+1;}
+   }
+   
+   var f4=function (){
+    p=document.getElementsByClassName('buttons')
+        if(counter==9)
+          {
+        for(var n=0;n<p.length;++n)
+         { p[n].value='';}
+         counter=0;}
+    if(document.getElementById('button4').value.length==0)
+       {
+       if(counter%2==0){
+           
+       document.getElementById('button4').value='X'
+       document.getElementById('button4').style.color='white';
+       if(document.getElementById('button1').value=='X' && document.getElementById('button7').value=='X'  || document.getElementById('button5').value=='X' && document.getElementById('button6').value=='X')
+             {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match')
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}            
+              } 
+       }
+       else{
+        document.getElementById('button4').value='O'
+        document.getElementById('button4').style.color='black';
+        if(document.getElementById('button1').value=='O' && document.getElementById('button7').value=='O'  || document.getElementById('button5').value=='O' && document.getElementById('button6').value=='O')
+             {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')        
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}     } 
+       }
+       counter=counter+1;}
+   }
+   
+   var f5=function (){
+    p=document.getElementsByClassName('buttons')
+        if(counter==9)
+          {
+        for(var n=0;n<p.length;++n)
+         { p[n].value='';}
+         counter=0;}
+    if(document.getElementById('button5').value.length==0)
+       {
+       if(counter%2==0){
+          
+       document.getElementById('button5').value='X'
+       document.getElementById('button5').style.color='white';
+       if(document.getElementById('button1').value=='X' && document.getElementById('button9').value=='X' || document.getElementById('button3').value=='X' && document.getElementById('button7').value=='X' || document.getElementById('button4').value=='X' && document.getElementById('button6').value=='X' || document.getElementById('button2').value=='X' && document.getElementById('button8').value=='X')
+             {p1= document.getElementById('p1').value;alert('Congratulations '+p1+'  you won the match')     
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}       }
+       }
+       else{
+      
+        document.getElementById('button5').value='O'
+        document.getElementById('button5').style.color='black';
+        if(document.getElementById('button1').value=='O' && document.getElementById('button9').value=='O' || document.getElementById('button3').value=='O' && document.getElementById('button7').value=='O' || document.getElementById('button4').value=='O' && document.getElementById('button6').value=='O' || document.getElementById('button2').value=='O' && document.getElementById('button8').value=='O')
+             {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')  
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}           }
+       }
+       counter=counter+1;}
+   }
+   
+   var f6=function (){
+    p=document.getElementsByClassName('buttons')
+        if(counter==9)
+          {
+        for(var n=0;n<p.length;++n)
+         { p[n].value='';}
+         counter=0;}
+    if(document.getElementById('button6').value.length==0)
+       {
+       if(counter%2==0){
+         
+       document.getElementById('button6').value='X'
+       document.getElementById('button6').style.color='white';
+       if(document.getElementById('button3').value=='X' && document.getElementById('button9').value=='X'  || document.getElementById('button4').value=='X' && document.getElementById('button5').value=='X')
+             {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match')  
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}          } 
+       }
+       else{
+        
+        document.getElementById('button6').value='O'
+        document.getElementById('button6').style.color='black';
+        if(document.getElementById('button3').value=='O' && document.getElementById('button9').value=='O'  || document.getElementById('button4').value=='O' && document.getElementById('button5').value=='O')
+             {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')   
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}          } 
+       }
+       counter=counter+1;}
+   }
+   
+   var f7=function (){
+    p=document.getElementsByClassName('buttons')
+        if(counter==9)
+          {
+        for(var n=0;n<p.length;++n)
+         { p[n].value='';}
+         counter=0;}
+    if(document.getElementById('button7').value.length==0)
+       {
+       if(counter%2==0){
+         
+       document.getElementById('button7').value='X'
+       document.getElementById('button7').style.color='white';
+       if(document.getElementById('button1').value=='X' && document.getElementById('button4').value=='X' || document.getElementById('button8').value=='X' && document.getElementById('button9').value=='X' || document.getElementById('button3').value=='X' && document.getElementById('button5').value=='X')
+             {p1= document.getElementById('p1').value;alert('Congratulations '+p1+'  you won the match')  
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}          }
+       }
+       else{
+        
+        document.getElementById('button7').value='O'
+        document.getElementById('button7').style.color='black';
+        if(document.getElementById('button1').value=='O' && document.getElementById('button4').value=='O' || document.getElementById('button8').value=='O' && document.getElementById('button9').value=='O' || document.getElementById('button3').value=='O' && document.getElementById('button5').value=='O')
+             {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')      
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}       }
+       }
+       counter=counter+1;}
+   }
+   
+   var f8=function (){
+    p=document.getElementsByClassName('buttons')
+        if(counter==9)
+          {
+        for(var n=0;n<p.length;++n)
+         { p[n].value='';}
+         counter=0;}
+    if(document.getElementById('button8').value.length==0)
+       {
+       if(counter%2==0){
+          
+       document.getElementById('button8').value='X'
+       document.getElementById('button8').style.color='white';
+       if(document.getElementById('button2').value=='X' && document.getElementById('button5').value=='X'  || document.getElementById('button7').value=='X' && document.getElementById('button9').value=='X')
+             {p1= document.getElementById('p1').value;alert('Congratulations '+p1+'  you won the match')  
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}          }  
+       }
+       else{
+        document.getElementById('button8').value='O'
+        document.getElementById('button8').style.color='black';
+        if(document.getElementById('button2').value=='O' && document.getElementById('button5').value=='O'  || document.getElementById('button7').value=='O' && document.getElementById('button9').value=='O')
+             {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')   
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}          }
+       }
+       counter=counter+1;}
+   }
+   
+   var f9=function (){
+    p=document.getElementsByClassName('buttons')
+        if(counter==9)
+          {
+        for(var n=0;n<p.length;++n)
+         { p[n].value='';}
+         counter=0;}
+    if(document.getElementById('button9').value.length==0)
+       {
+       if(counter%2==0){
+           
+       document.getElementById('button9').value='X'
+       document.getElementById('button9').style.color='white';
+       if(document.getElementById('button3').value=='X' && document.getElementById('button6').value=='X' || document.getElementById('button7').value=='X' && document.getElementById('button8').value=='X' || document.getElementById('button1').value=='X' && document.getElementById('button5').value=='X')
+             {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match')  
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}          } 
+
+       }
+       else{
+      
+        document.getElementById('button9').value='O'
+        document.getElementById('button9').style.color='black';
+        if(document.getElementById('button3').value=='O' && document.getElementById('button6').value=='O' || document.getElementById('button7').value=='O' && document.getElementById('button8').value=='O' || document.getElementById('button1').value=='O' && document.getElementById('button5').value=='O')
+             {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')   
+             p=document.getElementsByClassName('buttons')
+             for(var i=0;i<p.length;++i)
+                    { p[i].value='';counter=0}          } 
+       }
+       counter=counter+1;
+   }}
+   
+//    var check=function(v){
+//        var quotient
+//        if(v%3==1){
+//             if(document.getElementById('button'+v).value=='X' && document.getElementById('button'+parseInt(v+1)).value=='X' && document.getElementById('button'+parseInt(v+2)).value=='X')
+//             {   console.log('dfg')
+//                 console.log("player 1 has won the match")
+//             }
+//             else(document.getElementById('button'+v).value=='O' && document.getElementById('button'+parseInt(v+1)).value=='O' && document.getElementById('button'+parseInt(v+2)).value=='O')
+//             {  console.log('dfgsdf')
+//                 console.log("player 2 has won the match")
+//             }
+//        }
+//        if(v%3==2){
+//             if(document.getElementById('button'+(v-1)).value=='X' && document.getElementById('button'+(v)).value=='X' && document.getElementById('button'+(v+1)).value=='X')
+//             {
+//                 console.log("player 1 has won the match")
+//             }
+//             else(document.getElementById('button'+(v-1)).value=='O' && document.getElementById('button'+(v)).value=='O' && document.getElementById('button'+(v+1)).value=='O')
+//             {
+//                 console.log("player 2 has won the match")
+//             }
+//        }
+//        if(v%3==0){
+//             if(document.getElementById('button'+(v-2)).value=='X' && document.getElementById('button'+(v-1)).value=='X' && document.getElementById('button'+(v)).value=='X')
+//             {
+//                 console.log("player 1 has won the match")
+//             }
+//             else(document.getElementById('button'+(v-2)).value=='O' && document.getElementById('button'+(v-1)).value=='O' && document.getElementById('button'+(v)).value=='O')
+//             {
+//                 console.log("player 2 has won the match")
+//             }
+//        }
+       
+//    }
+  
+   </script>
+</body>
+</html>
