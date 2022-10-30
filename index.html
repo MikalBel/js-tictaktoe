@@ -7,23 +7,27 @@
     <title>Tic Tac Toe</title>
     <style>
         body{
-           background: yellow;
+           background: #33FF65;
+            height:100vh;
         }
         .head{
             width:100%;
             background:#4cf;
-            height:200px;
+            height:150px;
         }
         .first{
             width:25%;
             background: #000;
-            height:480px;
+            height:100vh;
             float:left;
+            display: flex;
+            justify-items: center;
+            align-items: center;
         }
         .center{
-            background: aqua;
+            background: #339BFF;
             width:50%;
-            height:480px;
+            height:100vh;
             float:left;
         }
         .center table
@@ -34,17 +38,23 @@
         .third{
             float:left;
             width:25%;
-            height:480px;
+            height:100vh;
             background: #000;
+            display: flex;
+            justify-items: center;
+            align-items: center;
         }
     input[type='button']{
-        background:orange;
+        background:#FF5433;
         height:100px;
         
         font-size: 90px;
         width:100px;
 
     }
+     input[type='button']:hover {
+	background : red;
+}
     #p1{   
         height: 30px;
         width:200px;
@@ -89,7 +99,7 @@
         left:40%;
        }
     .player1{
-       padding-top:150px;
+       padding-top:100px;
     }
     .player2{
         float:right;
@@ -167,6 +177,7 @@
        document.getElementById('button1').value='X'
        
        document.getElementById('button1').style.color='white';
+           document.getElementById('button1').style.background='red';
        if(document.getElementById('button2').value=='X' && document.getElementById('button3').value=='X' || document.getElementById('button4').value=='X' && document.getElementById('button7').value=='X' || document.getElementById('button5').value=='X' && document.getElementById('button9').value=='X')
              {p1= document.getElementById('p1').value;
              alert('Congratulations '+p1+'  you won the match')  
@@ -200,6 +211,7 @@
            
        document.getElementById('button2').value='X'
        document.getElementById('button2').style.color='white';
+           document.getElementById('button1').style.background='red';
        if(document.getElementById('button1').value=='X' && document.getElementById('button3').value=='X'  || document.getElementById('button5').value=='X' && document.getElementById('button8').value=='X')
              {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match')  
              p=document.getElementsByClassName('buttons')
@@ -233,6 +245,7 @@
            
        document.getElementById('button3').value='X'
        document.getElementById('button3').style.color='white';
+           document.getElementById('button1').style.background='red';
        if(document.getElementById('button6').value=='X' && document.getElementById('button9').value=='X' || document.getElementById('button5').value=='X' && document.getElementById('button7').value=='X' || document.getElementById('button1').value=='X' && document.getElementById('button2').value=='X')
              {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match') 
              p=document.getElementsByClassName('buttons')
@@ -266,6 +279,7 @@
            
        document.getElementById('button4').value='X'
        document.getElementById('button4').style.color='white';
+           document.getElementById('button1').style.background='red';
        if(document.getElementById('button1').value=='X' && document.getElementById('button7').value=='X'  || document.getElementById('button5').value=='X' && document.getElementById('button6').value=='X')
              {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match')
              p=document.getElementsByClassName('buttons')
@@ -298,6 +312,7 @@
           
        document.getElementById('button5').value='X'
        document.getElementById('button5').style.color='white';
+           document.getElementById('button1').style.background='red';
        if(document.getElementById('button1').value=='X' && document.getElementById('button9').value=='X' || document.getElementById('button3').value=='X' && document.getElementById('button7').value=='X' || document.getElementById('button4').value=='X' && document.getElementById('button6').value=='X' || document.getElementById('button2').value=='X' && document.getElementById('button8').value=='X')
              {p1= document.getElementById('p1').value;alert('Congratulations '+p1+'  you won the match')     
              p=document.getElementsByClassName('buttons')
@@ -330,6 +345,7 @@
          
        document.getElementById('button6').value='X'
        document.getElementById('button6').style.color='white';
+           document.getElementById('button1').style.background='red';
        if(document.getElementById('button3').value=='X' && document.getElementById('button9').value=='X'  || document.getElementById('button4').value=='X' && document.getElementById('button5').value=='X')
              {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match')  
              p=document.getElementsByClassName('buttons')
@@ -362,6 +378,7 @@
          
        document.getElementById('button7').value='X'
        document.getElementById('button7').style.color='white';
+           document.getElementById('button1').style.background='red';
        if(document.getElementById('button1').value=='X' && document.getElementById('button4').value=='X' || document.getElementById('button8').value=='X' && document.getElementById('button9').value=='X' || document.getElementById('button3').value=='X' && document.getElementById('button5').value=='X')
              {p1= document.getElementById('p1').value;alert('Congratulations '+p1+'  you won the match')  
              p=document.getElementsByClassName('buttons')
@@ -394,6 +411,7 @@
           
        document.getElementById('button8').value='X'
        document.getElementById('button8').style.color='white';
+           document.getElementById('button1').style.background='red';
        if(document.getElementById('button2').value=='X' && document.getElementById('button5').value=='X'  || document.getElementById('button7').value=='X' && document.getElementById('button9').value=='X')
              {p1= document.getElementById('p1').value;alert('Congratulations '+p1+'  you won the match')  
              p=document.getElementsByClassName('buttons')
@@ -425,6 +443,7 @@
            
        document.getElementById('button9').value='X'
        document.getElementById('button9').style.color='white';
+           document.getElementById('button1').style.background='red';
        if(document.getElementById('button3').value=='X' && document.getElementById('button6').value=='X' || document.getElementById('button7').value=='X' && document.getElementById('button8').value=='X' || document.getElementById('button1').value=='X' && document.getElementById('button5').value=='X')
              {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match')  
              p=document.getElementsByClassName('buttons')
