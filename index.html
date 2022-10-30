@@ -12,12 +12,12 @@
         }
         .head{
             width:100%;
-            background:#4cf;
+            background:#E5EBB2;
             height:150px;
         }
         .first{
             width:25%;
-            background: #000;
+            background: #153462;
             height:100vh;
             float:left;
             display: flex;
@@ -25,7 +25,7 @@
             align-items: center;
         }
         .center{
-            background: #339BFF;
+            background: #4fa095;
             width:50%;
             height:100vh;
             float:left;
@@ -39,13 +39,13 @@
             float:left;
             width:25%;
             height:100vh;
-            background: #000;
+            background: #153462;
             display: flex;
             justify-items: center;
             align-items: center;
         }
     input[type='button']{
-        background:#FF5433;
+        background:#BAD1C2;
         height:100px;
         
         font-size: 90px;
@@ -53,7 +53,7 @@
 
     }
      input[type='button']:hover {
-	background : red;
+	background : #00ABB3;
 }
     #p1{   
         height: 30px;
@@ -85,7 +85,7 @@
         width:100px;
         height:40px;
         font-size:20px;
-        color:white;
+        color:#3C4048;
         border: 0px;
       outline:0px;
 
@@ -172,18 +172,27 @@
          { p[n].value='';}
          counter=0;}
        if(document.getElementById('button1').value.length==0)
-       {if(counter%2==0){
+       {
+        if(counter%2==0){
            
        document.getElementById('button1').value='X'
        
        document.getElementById('button1').style.color='white';
-           document.getElementById('button1').style.background='red';
+           document.getElementById('button1').style.background='#BCE29E';
        if(document.getElementById('button2').value=='X' && document.getElementById('button3').value=='X' || document.getElementById('button4').value=='X' && document.getElementById('button7').value=='X' || document.getElementById('button5').value=='X' && document.getElementById('button9').value=='X')
-             {p1= document.getElementById('p1').value;
+             {
+                p1= document.getElementById('p1').value;
              alert('Congratulations '+p1+'  you won the match')  
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}        }   }
+                    { p[i].value='';counter=0} 
+            for(var j=1;j<=9;j++)
+            {
+                document.getElementById('button'+j).style.background='#BAD1C2'
+            }
+                    
+                     
+                     }   }
        else{
         
         document.getElementById('button1').value='O'
@@ -194,7 +203,11 @@
                 alert('Congratulations '+p2+'  you won the match')  
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}          } 
+                    { p[i].value='';counter=0}     
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }     } 
               }
          counter=counter+1;}
    }
@@ -211,12 +224,16 @@
            
        document.getElementById('button2').value='X'
        document.getElementById('button2').style.color='white';
-           document.getElementById('button1').style.background='red';
+           document.getElementById('button2').style.background='#BCE29E';
        if(document.getElementById('button1').value=='X' && document.getElementById('button3').value=='X'  || document.getElementById('button5').value=='X' && document.getElementById('button8').value=='X')
              {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match')  
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}       
+                    { p[i].value='';counter=0} 
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }      
                          }  }
        
        else{
@@ -228,6 +245,10 @@
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
                     { p[i].value='',counter=0}  
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }
                         }  }
        counter=counter+1;}
    }
@@ -245,12 +266,16 @@
            
        document.getElementById('button3').value='X'
        document.getElementById('button3').style.color='white';
-           document.getElementById('button1').style.background='red';
+           document.getElementById('button3').style.background='#BCE29E';
        if(document.getElementById('button6').value=='X' && document.getElementById('button9').value=='X' || document.getElementById('button5').value=='X' && document.getElementById('button7').value=='X' || document.getElementById('button1').value=='X' && document.getElementById('button2').value=='X')
              {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match') 
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0;}           } 
+                    { p[i].value='';counter=0;}    
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }       } 
        }
        else{
         
@@ -260,7 +285,11 @@
              {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')  
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}           } 
+                    { p[i].value='';counter=0}     
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }      } 
        }
        
        counter=counter+1;}
@@ -279,22 +308,30 @@
            
        document.getElementById('button4').value='X'
        document.getElementById('button4').style.color='white';
-           document.getElementById('button1').style.background='red';
+           document.getElementById('button4').style.background='#BCE29E';
        if(document.getElementById('button1').value=='X' && document.getElementById('button7').value=='X'  || document.getElementById('button5').value=='X' && document.getElementById('button6').value=='X')
              {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match')
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}            
+                    { p[i].value='';counter=0} 
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }           
               } 
        }
        else{
         document.getElementById('button4').value='O'
         document.getElementById('button4').style.color='black';
-        if(document.getElementById('button1').value=='O' && document.getElementById('button7').value=='O'  || document.getElementById('button5').value=='O' && document.getElementById('button6').value=='O')
+        if(document.getElementById('button4').value=='O' && document.getElementById('button7').value=='O'  || document.getElementById('button5').value=='O' && document.getElementById('button6').value=='O')
              {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')        
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}     } 
+                    { p[i].value='';counter=0} 
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }    } 
        }
        counter=counter+1;}
    }
@@ -312,12 +349,16 @@
           
        document.getElementById('button5').value='X'
        document.getElementById('button5').style.color='white';
-           document.getElementById('button1').style.background='red';
+           document.getElementById('button5').style.background='#BCE29E';
        if(document.getElementById('button1').value=='X' && document.getElementById('button9').value=='X' || document.getElementById('button3').value=='X' && document.getElementById('button7').value=='X' || document.getElementById('button4').value=='X' && document.getElementById('button6').value=='X' || document.getElementById('button2').value=='X' && document.getElementById('button8').value=='X')
              {p1= document.getElementById('p1').value;alert('Congratulations '+p1+'  you won the match')     
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}       }
+                    { p[i].value='';counter=0}    
+            for(var j=1;j<=9;j++)
+            {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+            }   }
        }
        else{
       
@@ -327,7 +368,11 @@
              {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')  
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}           }
+                    { p[i].value='';counter=0} 
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }          }
        }
        counter=counter+1;}
    }
@@ -345,12 +390,16 @@
          
        document.getElementById('button6').value='X'
        document.getElementById('button6').style.color='white';
-           document.getElementById('button1').style.background='red';
+           document.getElementById('button6').style.background='#BCE29E';
        if(document.getElementById('button3').value=='X' && document.getElementById('button9').value=='X'  || document.getElementById('button4').value=='X' && document.getElementById('button5').value=='X')
              {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match')  
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}          } 
+                    { p[i].value='';counter=0} 
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }         } 
        }
        else{
         
@@ -360,7 +409,11 @@
              {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')   
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}          } 
+                    { p[i].value='';counter=0}   
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }       } 
        }
        counter=counter+1;}
    }
@@ -378,12 +431,16 @@
          
        document.getElementById('button7').value='X'
        document.getElementById('button7').style.color='white';
-           document.getElementById('button1').style.background='red';
+           document.getElementById('button7').style.background='#BCE29E';
        if(document.getElementById('button1').value=='X' && document.getElementById('button4').value=='X' || document.getElementById('button8').value=='X' && document.getElementById('button9').value=='X' || document.getElementById('button3').value=='X' && document.getElementById('button5').value=='X')
              {p1= document.getElementById('p1').value;alert('Congratulations '+p1+'  you won the match')  
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}          }
+                    { p[i].value='';counter=0}  
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }        }
        }
        else{
         
@@ -393,7 +450,11 @@
              {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')      
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}       }
+                    { p[i].value='';counter=0} 
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }      }
        }
        counter=counter+1;}
    }
@@ -411,12 +472,16 @@
           
        document.getElementById('button8').value='X'
        document.getElementById('button8').style.color='white';
-           document.getElementById('button1').style.background='red';
+           document.getElementById('button8').style.background='#BCE29E';
        if(document.getElementById('button2').value=='X' && document.getElementById('button5').value=='X'  || document.getElementById('button7').value=='X' && document.getElementById('button9').value=='X')
              {p1= document.getElementById('p1').value;alert('Congratulations '+p1+'  you won the match')  
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}          }  
+                    { p[i].value='';counter=0}    
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }      }  
        }
        else{
         document.getElementById('button8').value='O'
@@ -425,7 +490,11 @@
              {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')   
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}          }
+                    { p[i].value='';counter=0}   
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }       }
        }
        counter=counter+1;}
    }
@@ -443,12 +512,16 @@
            
        document.getElementById('button9').value='X'
        document.getElementById('button9').style.color='white';
-           document.getElementById('button1').style.background='red';
+           document.getElementById('button9').style.background='#BCE29E';
        if(document.getElementById('button3').value=='X' && document.getElementById('button6').value=='X' || document.getElementById('button7').value=='X' && document.getElementById('button8').value=='X' || document.getElementById('button1').value=='X' && document.getElementById('button5').value=='X')
              {p1= document.getElementById('p1') .value;alert('Congratulations '+p1+'  you won the match')  
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}          } 
+                    { p[i].value='';counter=0}   
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }       } 
 
        }
        else{
@@ -459,7 +532,11 @@
              {p2= document.getElementById('p2').value;alert('Congratulations '+p2+'  you won the match')   
              p=document.getElementsByClassName('buttons')
              for(var i=0;i<p.length;++i)
-                    { p[i].value='';counter=0}          } 
+                    { p[i].value='';counter=0}   
+                    for(var j=1;j<=9;j++)
+                    {
+                        document.getElementById('button'+j).style.background='#BAD1C2'
+                    }       } 
        }
        counter=counter+1;
    }}
